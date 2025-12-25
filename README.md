@@ -23,6 +23,15 @@ Rule file format reference: https://cursor.com/docs/context/rules#rulemd-file-fo
 - **Adequacy**: Mocks are allowed only if the resulting behavior remains real.
 - **Workflow**: Isolated unit tests are insufficient if they don't map to real usage.
 
+**Usage in Code Review**
+
+Use PAPER as a noun to diagnose the state of the test suite, not just to critique style.
+
+- “This test passes, but it’s **PAPER**.” (It asserts nothing of value)
+- “The logic is covered, but it’s **PAPER**.” (It uses synthetic state impossible in production)
+- “We’re accumulating **PAPER** around the payment workflow.” (We have many tests, but none verify the money moves)
+- “The failure wasn’t subtle — the tests were **PAPER**.” (We trusted a suite that wasn't exercising reality)
+
 **Credits**
 
 - Developed by Will Wieselquist. Anyone can use it.
