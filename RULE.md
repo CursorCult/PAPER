@@ -47,9 +47,13 @@ This includes (but is not limited to):
 
 ## Remedy
 
-> Replace PAPER tests with workflow-level tests **before** fixing code.
+> To fix a **PAPER** test:
 
-Fixes applied while PAPER remains are invalid.
+1.  **Introduce a new, failing test** that captures the real behavior which the **PAPER** test previously obscured. This new test must fail before any changes to the production code.
+2.  **Replace the **PAPER** test** with this new, reality-driven test.
+3.  **Apply the code fix** such that the new test passes.
+
+Fixes applied while **PAPER** remains, or without first establishing a failing test for the real behavior, are invalid.
 
 ---
 
